@@ -8,13 +8,8 @@ const todos = [];
 
 // to convert body into json
 app.use(express.json());
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173","https://back-end-todo-list.surge.sh",
-    ],
-  }),
-);
+app.use(cors({origin: ["http://localhost:5173","https://back-end-todo-list.surge.sh"]}));
+
 
 app.get("/api/v1/todos", (request, response) => {
   const message = !todos.length ? "todos empty" : "ye lo sub todos";
